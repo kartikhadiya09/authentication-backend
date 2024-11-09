@@ -23,3 +23,8 @@ file name : .gitignore
 .env
 node_modules
 
+
+install packege
+
+npm i nodemon
+run cmd:(npx nodemon index.js)
