@@ -1,4 +1,7 @@
 const express = require('express')
+const database = require('./database')
+const db=require('./config/db')
+
 require("dotenv").config();
 
 
@@ -12,8 +15,13 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 // Example route
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
+app.get('/remoteConfig', (req, res) => {
+   try {
+    const remoteConfig = database()
+   } catch (error) {
+        console.log("error",error);
+        
+   }
 });
 
 app.get('/login', (req, res) => {
